@@ -56,7 +56,7 @@ const Nav = () => {
   return (
     <nav className='w-full mb-2 pt-3 c-Nav '>
 
-      <div className=' max-sm:hidden flex-between w-full mb-2 pt-3 c-Nav text-black'>
+      <div className=' max-sm:hidden sticky top-0 flex-between w-full mb-2 pt-3 c-Nav text-black'>
         <div className=" flex flex-col lg:flex-row md:px-7 gap-[5px] lg:gap-[10px] ">
           <div className="logo-container">
             <Link href='/' className='flex gap-2 flex-center'>
@@ -115,7 +115,7 @@ const Nav = () => {
           <div className="vl"></div>
           <div className="white-text ">Home</div>
           <div className="vl"></div>
-          <div className="white-text ">Treatement List</div>
+          <div className="white-text fo">Treatement List</div>
           <div className="vl"></div>
           <div className="white-text ">Why Choose Us?</div>
           <div className="vl"></div>
@@ -132,7 +132,7 @@ const Nav = () => {
       </div>
 
        {/* Mobile Navigation */}
-       <div className='sm:hidden nav-blue-container text-white flex-between'>
+       <div className='sticky top-0 sm:hidden nav-blue-container text-white flex-between'>
          <div className='nav-mobile-container flex-between gap-[5px] lg:gap-[10px]'>
          
           <Grid.Container justify="flex-start" gap={2}>
@@ -319,7 +319,8 @@ const Nav = () => {
           </div>
         <div className="vl-2 "></div>
         <div className="flex-start black-text max-sm:hidden">
-        <div className=" pr-3">
+        <div className=" pr-3" >
+          <Link href={'/login_page'}>
           <Image
             src={'/login_icon.png'}
             width={25}
@@ -329,6 +330,8 @@ const Nav = () => {
           
           // className="lg:w-[66px] w-[35px] relative bottom-1 rounded-full "
           />
+          </Link>
+         
         </div>
           <Link href={'/login_page'}>
             Login

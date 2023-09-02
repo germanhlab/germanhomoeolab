@@ -13,6 +13,7 @@ import { collection, addDoc, getDoc, getDocs, where, query, deleteDoc, updateDoc
 import { auth, db } from "@firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Sidebar from "@components/Sidebar";
+import Loading from "./loading";
 
 
 // const getProducts = async () => {
@@ -31,10 +32,13 @@ const usePage = async () => {
   const [products, setProducts] = useState([]);
 
 
-
+  const [loadingF, setLoading] = useState(true);
   useEffect(() => {
-    getProducts();
-  }, []);
+
+    if (loadingF) {
+      getProducts();
+    }
+  }, [ loadingF]);
 
   // get data from database
   const getProducts = async () => {
@@ -51,6 +55,7 @@ const usePage = async () => {
         console.log(doc.id, " => ", doc.data());
       });
       setProducts(data);
+      setLoading(false);
 
     } catch (error) {
       console.error("erroe Meaasage", error);
@@ -79,7 +84,9 @@ const usePage = async () => {
             </div>
           </div>
         </div>
-        <div className=" h-[88vh] overflow-y-auto flex justify-center items-start flex-wrap">
+        ( loadingF ?
+        <Loading/> :
+       ( <div className=" h-[88vh] overflow-y-auto flex justify-center items-start flex-wrap">
 
           {products.map((item) => {
               return (
@@ -114,7 +121,7 @@ const usePage = async () => {
           })}
         
 
-        </div>
+        </div> ))
       </div>
     </div>
 

@@ -38,16 +38,10 @@ const Disease = () => {
 
     useEffect(() => {
 
-
-        // if (!loading && !user) {
-        //     router.push("/login");
-        // }
-        // if (!!user) {
-        //     console.log(user.uid);
-        //     getTodos();
-        // }
-       // getTodos();
-    }); //, [user, loading]);
+        if (loadingF) {
+            getTodos();
+        }
+      }, [ loadingF]);
 
     // get data from database
     const getTodos = async () => {
@@ -70,7 +64,7 @@ const Disease = () => {
         }
     }
 
-    getTodos();
+    // getTodos();
 
     return (loadingF ?
         <Loading/>

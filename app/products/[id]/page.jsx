@@ -30,6 +30,7 @@ const usePage = ({ params }) => {
 
   const [user, loading] = useAuthState(auth);
   const { authUser, isLoading } = useAuth();
+  const [loadingF, setLoading] = useState(true);
 
   const router = useRouter();
 
@@ -40,15 +41,10 @@ const usePage = ({ params }) => {
 
   useEffect(() => {
 
-    if (!loading && !user) {
-      router.push("/login");
+    if (loadingF) {
+        getTodos();
     }
-    if (!!user) {
-      console.log(user.uid);
-      getTodos();
-    }
-  }, [user, loading]);
-
+  }, [ loadingF]);
 
   const bookingHandler = async () => {
 
@@ -83,6 +79,7 @@ const usePage = ({ params }) => {
         console.log(doc.id, " => ", doc.data());
       });
       setTodos(data);
+      setLoading(false);
 
     } catch (error) {
       console.error("erroe Meaasage", error);
