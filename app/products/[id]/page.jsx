@@ -23,6 +23,7 @@ import { useRouter } from 'next/navigation';
 import { auth } from '@firebase/firebase';
 import { collection, addDoc, getDoc, getDocs, where, query, deleteDoc, updateDoc, doc, setDoc } from "firebase/firestore";
 import { db } from "@firebase/firebase";
+import ImageSlider from '@components/ProductISlider/ImageSlider';
 
 
 const usePage = ({ params }) => {
@@ -42,7 +43,7 @@ const usePage = ({ params }) => {
   useEffect(() => {
 
     if (loadingF) {
-        getTodos();
+      getTodos();
     }
   }, [ loadingF]);
 
@@ -86,14 +87,15 @@ const usePage = ({ params }) => {
     }
   }
 
+  
 
   // const [date, setEmail] = useState(null);
   // const [password, setPassword] = useState(null);
   // const [user, loading] = useAuthState(auth);
 
-  const [valueTime, onChangeTime] = useState('10:00');
-  const [dateC, setDate] = useState();
-  console.log(dateC);
+  // const [valueTime, onChangeTime] = useState('10:00');
+  // const [dateC, setDate] = useState();
+  // console.log(dateC);
 
   return (
     <div className="w-full md:py-20">
@@ -107,7 +109,8 @@ const usePage = ({ params }) => {
           {/* left column start */}
           <div className="w-full md:w-auto flex-[1] max-w-[300px] lg:max-w-full mx-auto lg:mx-0">
         
-           <ProductDetailsCarousel images={todo._imageUrls} />
+           {/* <ProductDetailsCarousel images={todo._imageUrls} /> */}
+           <ImageSlider imgs={todo._imageUrls}/>
         
             {/* <ProductDetailsCarousel images={[
               { url: "/arthritis.jpg", id: '1',name: 'hello' },
@@ -116,28 +119,8 @@ const usePage = ({ params }) => {
               { url: "/arthritis3.jpg", id: '4', name: 'hello' },
             ]} /> */}
 
-            {/* <ProductDetailsCarousel images={p.image.data} /> */}
+           
             {/* <span>Left Product Images</span> */}
-            {/* <div className='max-w-[2520px]
-                            mx-auto
-                            xl:px-20 
-                            md:px-10
-                            sm:px-2
-                            px-4'>
-Hi
-            </div> */}
-
-            {/* <div className='flex-between image-container'>
-            <Image
-             className="paddings "
-                width={800}
-                height={800}
-                src={'/bs1.jpg'}
-                alt={''}
-            />
-    
-            </div> */}
-
 
           </div>
           {/* left column end */}

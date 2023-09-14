@@ -4,7 +4,7 @@ const nextConfig = {
       appDir: true,
     },
     images: {
-      domains: ['lh3.googleusercontent.com', 'firebasestorage.googleapis.com']
+      domains: ['lh3.googleusercontent.com', 'firebasestorage.googleapis.com','4.bp.blogspot.com']
     },
     eslint: {
       // Warning: This allows production builds to successfully complete even if

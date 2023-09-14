@@ -4,12 +4,17 @@
 import LeftNav from "@components/LeftNav/LeftNav"
 import LeftNav2 from "@components/LeftNav2/LeftNav2"
 import Disease from "@components/ListComp/Disease"
+import MainSlider from "@components/Slider/MainSlider"
 import Slider from "@components/Slider/Slider"
 import Image from "next/image"
 import Link from 'next/link'
 // import BootstrapCarousel from "./carousels/Bootstrap"
 // import Slider2 from "@components/Slider2/page"
+// import EmblaCarousel from './EmblaCarousel'
 
+const OPTIONS = {}
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 
 function Home() {
@@ -25,8 +30,8 @@ function Home() {
                 {/* <div className="blank-container" /> */}
 
                 <div className="w-full">
-                     <Slider />  
-                    
+                      {/* <Slider />  */}
+                     <MainSlider slides={SLIDES} options={OPTIONS}/>
                    {/* <BootstrapCarousel/>  */}
                     {/* <Example/> */}
                     {/* <Slider2/>  */}

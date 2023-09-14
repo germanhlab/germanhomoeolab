@@ -6,10 +6,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSwiper } from 'swiper/react';
 import { useEffect, useState } from "react";
 // import { useAuth } from "@firebase/auth_";
-import { useRouter } from 'next/navigation';
+
 import Loader from "@components/Loader";
 
-import { collection, addDoc, getDoc, getDocs, where, query, deleteDoc, updateDoc, doc, } from "firebase/firestore";
+import { collection, getDoc, getDocs, where, query, } from "firebase/firestore";
 import { auth, db } from "@firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Link from "next/link";
@@ -22,12 +22,12 @@ export default function Slider2() {
     // register();
 
     const swiper = useSwiper();
-    const [user, loading] = useAuthState(auth);
+    // const [user, loading] = useAuthState(auth);
 
-    const [todoInput, setTodoInput] = useState("");
-    const [todos, setTodos] = useState([]);
+    // const [todoInput, setTodoInput] = useState("");
+    // const [todos, setTodos] = useState([]);
     //for router or Navigate
-    const router = useRouter();
+    // const router = useRouter();
 
     useEffect(() => {
 
@@ -89,7 +89,7 @@ export default function Slider2() {
             <Swiper  spaceBetween={1} slidesPerView={1} >
                 {todos.length > 0 && todos.map((todo, index) => (
 
-                    <SwiperSlide key={todo} 
+                    <SwiperSlide key={index} 
                     >
                 
                         <Image

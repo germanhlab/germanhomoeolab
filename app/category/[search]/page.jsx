@@ -24,14 +24,11 @@ import Sidebar from "@components/Sidebar";
 // };
 
 
-
 const usePage = async ({ params }) => {
   const [user, loading] = useAuthState(auth);
   const { search } = params;
   const [products, setProducts] = useState([]);
   // const [productsCount, setProductsCount] = useState([]);
-
-
 
   useEffect(() => {
     getProducts();
@@ -71,7 +68,6 @@ const usePage = async ({ params }) => {
   // const products = await getProducts();
 
   return (
-
     <div className="w-full md:pl-1 py-10 flex">
       <Sidebar />
       {/* <div className="w-full h-[88vh] overflow-y-auto px-5">{children}</div> */}

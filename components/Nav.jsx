@@ -54,7 +54,7 @@ const Nav = () => {
   //   }, []);
 
   return (
-    <nav className='w-full mb-2 pt-3 c-Nav '>
+    <nav className='w-full mb-2 pt-3 c-Nav sticky'>
 
       <div className=' max-sm:hidden sticky top-0 flex-between w-full mb-2 pt-3 c-Nav text-black'>
         <div className=" flex flex-col lg:flex-row md:px-7 gap-[5px] lg:gap-[10px] ">

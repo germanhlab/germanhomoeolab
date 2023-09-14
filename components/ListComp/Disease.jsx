@@ -64,8 +64,8 @@ const Disease = () => {
         }
     }
 
-    // getTodos();
 
+    
     return (loadingF ?
         <Loading/>
          :
