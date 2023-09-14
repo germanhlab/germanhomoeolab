@@ -7,35 +7,35 @@ import { Carousel } from "react-responsive-carousel";
 
 const ProductDetailsCarousel = ({ images }) => {
 
-    const consol = () => {
-        console.log(images);
-    }
-    const [loadingF, setLoading] = useState(true);
+    // const consol = () => {
+    //     console.log(images);
+    // }
+    // const [loadingF, setLoading] = useState(true);
 
 
     // const {user, isLoading, signOut} = useAuth();
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        if (loadingF) {
+    //     if (loadingF) {
             
-        }
-      }, [ loadingF]);
+    //     }
+    //   }, [ loadingF]);
 
-      const time = new Date();
-  time.setSeconds(time.getSeconds() + 20); // 10 minutes timer
-        const {
-          totalSeconds,
-          seconds,
-          minutes,
-          hours,
-          days,
-          isRunning,
-          start,
-          pause,
-          resume,
-          restart,
-        } = useTimer({ time, onExpire: () => setLoading(false) });
+//       const time = new Date();
+//   time.setSeconds(time.getSeconds() + 20); // 10 minutes timer
+//         const {
+//           totalSeconds,
+//           seconds,
+//           minutes,
+//           hours,
+//           days,
+//           isRunning,
+//           start,
+//           pause,
+//           resume,
+//           restart,
+//         } = useTimer({ time, onExpire: () => setLoading(false) });
       
 
     return (
