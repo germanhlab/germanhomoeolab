@@ -79,17 +79,17 @@ const usePage = () => {
 
     const router = useRouter();
 
-    useEffect(() => {
+    // useEffect(() => {
 
 
-        if (!loading && !user) {
-            router.push("/login");
-        }
-        if (!!user) {
-            console.log(user.uid);
-            //    getTodos();
-        }
-    }, [user, loading]);
+    //     if (!loading && !user) {
+    //         router.push("/login");
+    //     }
+    //     if (!!user) {
+    //         console.log(user.uid);
+    //         //    getTodos();
+    //     }
+    // }, [user, loading]);
 
 
     const bookingHandler = async () => {

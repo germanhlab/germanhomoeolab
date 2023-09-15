@@ -84,9 +84,7 @@ const usePage = async () => {
             </div>
           </div>
         </div>
-        ( loadingF ?
-        <Loading/> :
-       ( <div className=" h-[88vh] overflow-y-auto flex justify-center items-start flex-wrap">
+       <div className="flex overflow-y-auto justify-center items-start flex-wrap">
 
           {products.map((item) => {
               return (
@@ -121,7 +119,7 @@ const usePage = async () => {
           })}
         
 
-        </div> ))
+        </div> 
       </div>
     </div>
 

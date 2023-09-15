@@ -30,9 +30,13 @@ const usePage = async ({ params }) => {
   const [products, setProducts] = useState([]);
   // const [productsCount, setProductsCount] = useState([]);
 
+  const [loadingF, setLoading] = useState(true);
   useEffect(() => {
-    getProducts();
-  }, []);
+
+    if (loadingF) {
+      getProducts();
+    }
+  }, [ loadingF]);
 
   // get data from database
   const getProducts = async () => {
@@ -46,18 +50,10 @@ const usePage = async ({ params }) => {
       querySnapshot.forEach((doc) => {
         data.push({ ...doc.data(), id: doc.id })
         // doc.data() is never undefined for query doc snapshots
-        // console.log(doc.id, " => ", doc.data());
+         console.log(doc.id, " => ", doc.data());
       });
       setProducts(data);
-
-      // products.map((item) => {
-      //   if (
-      //     item.productName.toLowerCase().includes(search.toLowerCase()) ||
-      //     item.categoryTag.toLowerCase().includes(search.toLowerCase())
-      //   ) {
-      //     return (setProductsCount(item.length));
-      //   }
-      // })
+      setLoading(false);
 
     } catch (error) {
       console.error("erroe Meaasage", error);
@@ -85,7 +81,7 @@ const usePage = async ({ params }) => {
             </div>
           </div>
         </div>
-        <div className=" h-[88vh] overflow-y-auto flex justify-center items-start flex-wrap">
+        <div className="flex overflow-y-auto  justify-center items-start flex-wrap">
 
           {products.map((item) => {
             if (

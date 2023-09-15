@@ -104,7 +104,7 @@ const LoginForm = () => {
         <div className=' w-full'>
             <div className='c-wrapperBlack w-full flex-center'>
                 <p className="text-lg text-white paddings">
-                    Book an Appointment
+                    We are for You!
                 </p>
             </div>
 
@@ -123,7 +123,7 @@ const LoginForm = () => {
                         />
                     </div>
                     <div className="mt-10 pl-1 flex flex-col">
-                        <label>Email</label>
+                        <label>Email *</label>
                         <input
                             type="email"
                             className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
@@ -132,7 +132,7 @@ const LoginForm = () => {
                         />
                     </div>
                     <div className="mt-10 pl-1 flex flex-col">
-                        <label>Phone Number</label>
+                        <label>Phone Number *</label>
                         <input
                             type="phone"
                             className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
@@ -141,7 +141,7 @@ const LoginForm = () => {
                         />
                     </div>
                     <div className="mt-10 pl-1 flex flex-col">
-                        <label>Subject</label>
+                        <label>Subject *</label>
                         <input
                             
                             className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"

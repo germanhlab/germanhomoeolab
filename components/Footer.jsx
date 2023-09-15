@@ -179,52 +179,60 @@ const Footer = () => {
 
             {/* Mobile Footer */}
             <div className="sm:hidden flex relative flex-col flex-start paddings  ">
-                 {/* For Importent links */}
-                 <div className="innerwidth paddingsLeft">
-                        <Text className="text-black font-inter font-bold">
-                            
-                                Quick Links
-                             </Text>
+                {/* For Importent links */}
+                <div className="innerwidth paddingsLeft">
+                    <Text className="text-black font-inter font-bold">
 
-                        <Link href='' className='   flex-start  text-sm'> Contact Us! </Link>
-                        <Link href='' className='   flex-start  text-sm'> Privacy Policy </Link>
-                        <Link href='' className='   flex-start  text-sm'> Our Service </Link>
-                        <Link href='' className='   flex-start  text-sm'> FAQ </Link>
-                        <br />
-                    </div>
+                        Quick Links
+                    </Text>
 
-                    {/* For Terms and Polices */}
-                    <div className="innerwidth paddingsLeft">
-                        <Text className="text-black font-inter font-bold">
-                           
-                                Terms & Policies
-                           
+                    <Link href='' className='   flex-start  text-sm'> Contact Us! </Link>
+                    <Link href='' className='   flex-start  text-sm'> Privacy Policy </Link>
+                    <Link href='' className='   flex-start  text-sm'> Our Service </Link>
+                    <Link href='' className='   flex-start  text-sm'> FAQ </Link>
+                    <br />
+                </div>
 
-                        </Text>
-                        <Link href='' className='   flex-start  text-sm'> Privacy Policy </Link>
-                        <Link href='' className='   flex-start  text-sm'> Our Service </Link>
-                        <Link href='' className='   flex-start  text-sm'> FAQ </Link>
-                        <br />
-                    </div>
-               
-                    {/* For Categories*/}
-                    <div className="innerwidth paddingsLeft">
-                        <Text className="text-black font-inter font-bold">
-                            
-                                Categories
-                           
+                {/* For Terms and Polices */}
+                <div className="innerwidth paddingsLeft">
+                    <Text className="text-black font-inter font-bold">
 
-                        </Text>
+                        Terms & Policies
 
-                        <Link href='' className='   flex-start  text-sm'> Male Enhancement Treatment </Link>
-                        <Link href='' className='   flex-start  text-sm'> Lack of Sex Desire Treatment </Link>
-                        <Link href='' className='   flex-start  text-sm'> Penis Enlargement Treatment </Link>
-                        <Link href='' className='   flex-start  text-sm'> Erectile Dysfunction Treatment </Link>
-                        <br />
-                    </div>
+
+                    </Text>
+                    <Link href='' className='   flex-start  text-sm'> Privacy Policy </Link>
+                    <Link href='' className='   flex-start  text-sm'> Our Service </Link>
+                    <Link href='' className='   flex-start  text-sm'> FAQ </Link>
+                    <br />
+                </div>
+
+                {/* For Categories*/}
+                <div className="innerwidth paddingsLeft">
+                    <Text className="text-black font-inter font-bold">
+
+                        Categories
+
+
+                    </Text>
+
+                    <Link href='' className='   flex-start  text-sm'> Male Enhancement Treatment </Link>
+                    <Link href='' className='   flex-start  text-sm'> Lack of Sex Desire Treatment </Link>
+                    <Link href='' className='   flex-start  text-sm'> Penis Enlargement Treatment </Link>
+                    <Link href='' className='   flex-start  text-sm'> Erectile Dysfunction Treatment </Link>
+                    <br />
+                </div>
 
             </div>
+            <hr className="rounded"></hr>
+            <div className='flex-center c-wrapperFooterDown'>
+                <section className='w-full gap-5 flex-end mb-7 pt-3 '>
 
+                    <iframe className="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.462622368836!2d88.13414837531907!3d22.070142679852804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02f7af492cf2f5%3A0xe4d9c5b3522681a8!2sGerman%20Homoeo%20Lab!5e0!3m2!1sen!2sin!4v1694769050594!5m2!1sen!2sin" style={{  height:"450", style: "border:0", allowfullscreen: "", loading: "lazy", referrerpolicy: "no-referrer-when-downgrade"}}></iframe>
+
+                </section>
+            </div>
+            
             <hr className="rounded"></hr>
             <div className='flex-center c-wrapperFooterDown'>
                 <section className='  gap-5 flex-end mb-7 pt-3 '>

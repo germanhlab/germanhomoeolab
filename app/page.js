@@ -58,8 +58,8 @@ function Home() {
                         </Link>
                     </div>
                     {/* appointment widget */}
-                    <div className="fab-container2 ">
-                        <Link href={""}  className="textVertical paddingsSmall text-white" >
+                    <div className="fab-container2 w-[50px]">
+                        <Link href={'/book_an_appointment'}  className="textVertical paddingsSmall text-white" >
                              Book an Appointment
 
                         </Link>

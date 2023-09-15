@@ -130,21 +130,24 @@ const RegisterForm =  () => {
                     email: email,
                     phone: '',
                     status: '',
-                    profilePhoto: '',
+                    profilePhoto:  "https://firebasestorage.googleapis.com/v0/b/german-homoeo-lab-web.appspot.com/o/avater%2Fguest.png?alt=media&token=105a2a2f-34d4-4cbe-8436-a185b870cf35",
                     registerDate: myTimestamp,
                     remarks: '',
                     location:'',
+                    areaPin: [],
                     approved: true,
                 })
         
             await updateProfile(auth.currentUser,
-                {displayName : username})
+                {displayName : username,
+                photoURL: "https://firebasestorage.googleapis.com/v0/b/german-homoeo-lab-web.appspot.com/o/avater%2Fguest.png?alt=media&token=105a2a2f-34d4-4cbe-8436-a185b870cf35",
+                })
             
-                setAuthUser({
-                    uid: user.uid,
-                    email: user.email,
-                    username: username,
-                });
+                // setAuthUser({
+                //     uid: user.uid,
+                //     email: user.email,
+                //     username: username,
+                // });
 
                 toast.success("Login Successfully!", {
                     position: "top-right",
@@ -158,7 +161,7 @@ const RegisterForm =  () => {
                     });
             
         } catch (error) {
-         //   console.log('error login with Email', error)
+            console.log('error login with Email', error)
             toast.error("Somethong went wrong!", {
                 position: "top-right",
                 autoClose: 5000,
@@ -190,7 +193,7 @@ const RegisterForm =  () => {
     return  (
         <main className="flex lg:h-[100vh]">
             <div className="w-full lg:w-[60%] p-8 md:p-14 flex items-center justify-center lg:justify-start">
-                <div className="p-8 w-[600px]">
+                <div className="p-8 sm:w-[80%] lg:w-[600px]">
                     <h1 className="text-6xl font-semibold">Sign Up</h1>
                     <p className="mt-6 ml-1">
                         Already have an account ?{" "}
