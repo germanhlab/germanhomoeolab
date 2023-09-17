@@ -13,6 +13,8 @@ import { collection, addDoc, getDoc, getDocs, where, query, deleteDoc, updateDoc
 import { auth, db } from "@firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Sidebar from "@components/Sidebar";
+import { Dropdown } from "@nextui-org/react";
+
 
 
 // const getProducts = async () => {
@@ -36,7 +38,7 @@ const usePage = async ({ params }) => {
     if (loadingF) {
       getProducts();
     }
-  }, [ loadingF]);
+  }, [loadingF]);
 
   // get data from database
   const getProducts = async () => {
@@ -50,7 +52,7 @@ const usePage = async ({ params }) => {
       querySnapshot.forEach((doc) => {
         data.push({ ...doc.data(), id: doc.id })
         // doc.data() is never undefined for query doc snapshots
-         console.log(doc.id, " => ", doc.data());
+        console.log(doc.id, " => ", doc.data());
       });
       setProducts(data);
       setLoading(false);
@@ -69,14 +71,49 @@ const usePage = async ({ params }) => {
       {/* <div className="w-full h-[88vh] overflow-y-auto px-5">{children}</div> */}
 
       <div className="w-full about-section-row flex-between flex flex-col lg:flex-row md:px-10 gap-[5px] lg:gap-[10px]  ">
-        <div className="w-full flex-between h-[8vh] bg-white border shadow-sm rounded-xl py-5 xl:block hidden">
+        <div className="w-full flex-between item-center h-[8vh] bg-white border shadow-sm rounded-xl py-5 xl:block hidden">
 
-          <div className="w-full about-section-row flex-between flex-row sm:px-5 md:px-10 gap-[5px] lg:gap-[10px] sm:paddingsSmall item-center">
+          <div className="w-full about-section-row flex-between flex-row sm:px-5 md:px-2 gap-[5px] lg:gap-[10px] sm:paddingsSmall item-center">
             <div>Showing services</div>
-            <div className="about-section-row item-center flex-row gap-[5px]">
+            <div className="about-section-row flex-center item-center flex-row gap-[5px]">
               <FcFilledFilter />
-              <div>
-                filter
+              <div className="w-[100px]">
+                <Dropdown>
+                  <Dropdown.Button flat>Filter</Dropdown.Button>
+                  <Dropdown.Menu aria-label="Static Actions">
+                    <Dropdown.Item key="new"><Link className="flex" href={'/category/male'} key={'male'}>
+                      <Image
+                        src={'/male_icon.png'}
+                        alt='male'
+                        width={20}
+                        height={20}
+                        className='object-contain py-6'
+                      />
+                      <button className="text-sm hover:text-[#ff9900] block py-2">Male</button>
+                    </Link></Dropdown.Item>
+                    <Dropdown.Item key="new"><Link className="flex" href={'/category/female'} key={'female'}>
+                      <Image
+                        src={'/female_icon.png'}
+                        alt='female'
+                        width={20}
+                        height={20}
+                        className='object-contain py-6'
+                      />
+                      <button className="text-sm hover:text-[#ff9900] block py-2">Female</button>
+                    </Link></Dropdown.Item>
+                    <Dropdown.Item key="new"><Link className="flex" href={'/category/others'} key={'others'}>
+                      <Image
+                        src={'/others_icon.png'}
+                        alt='others'
+                        width={20}
+                        height={20}
+                        className='object-contain py-6'
+                      />
+                      <button className="text-sm hover:text-[#ff9900] block py-2">Others</button>
+                    </Link></Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+
               </div>
             </div>
           </div>
@@ -132,7 +169,7 @@ const usePage = async ({ params }) => {
             //   )
             // }
           })}
-        
+
 
         </div>
       </div>

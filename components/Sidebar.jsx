@@ -5,6 +5,8 @@ import React from "react";
 import { MdWindow } from "react-icons/md";
 import { RiBillFill } from "react-icons/ri";
 import {v4} from "uuid";
+import Image from "next/image";
+
 const Sidebar = () => {
  
  
@@ -19,15 +21,24 @@ const Sidebar = () => {
           <span className="text-3xl">
             <MdWindow />
           </span>
+
           <span className="uppercase text-2xl tracking-widest font-light">
+
             categories
           </span>
         </div>
       </div>
-      <div className="px-[88px] py-4">
+      <div className="px-[120px] py-4">
         {
           categories.map((category)=> (
-            <Link href={`/category/${category.toLocaleLowerCase()}`} key={v4()}>
+            <Link className="flex" href={`/category/${category.toLocaleLowerCase()}`} key={v4()}>
+               <Image
+                src={`/${category.toLocaleLowerCase()}_icon.png`}
+                alt='logo'
+                width={20}
+                height={20}
+                className='object-contain py-2'
+              />
               <button className="text-xl hover:text-[#ff9900] block py-2">{category}</button>
             </Link>
           ))

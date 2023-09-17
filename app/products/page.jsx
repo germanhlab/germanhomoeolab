@@ -14,6 +14,7 @@ import { auth, db } from "@firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Sidebar from "@components/Sidebar";
 import Loading from "./loading";
+import { Dropdown } from "@nextui-org/react";
 
 
 // const getProducts = async () => {
@@ -38,7 +39,7 @@ const usePage = async () => {
     if (loadingF) {
       getProducts();
     }
-  }, [ loadingF]);
+  }, [loadingF]);
 
   // get data from database
   const getProducts = async () => {
@@ -79,47 +80,82 @@ const usePage = async () => {
             <div className="about-section-row item-center flex-row gap-[5px]">
               <FcFilledFilter />
               <div>
-                filter
+                <Dropdown>
+                  <Dropdown.Button flat>Filter</Dropdown.Button>
+                  <Dropdown.Menu aria-label="Static Actions">
+                    <Dropdown.Item key="new"><Link className="flex" href={'/category/male'} key={'male'}>
+                      <Image
+                        src={'/male_icon.png'}
+                        alt='male'
+                        width={20}
+                        height={20}
+                        className='object-contain py-6'
+                      />
+                      <button className="text-sm hover:text-[#ff9900] block py-2">Male</button>
+                    </Link></Dropdown.Item>
+                    <Dropdown.Item key="new"><Link className="flex" href={'/category/female'} key={'female'}>
+                      <Image
+                        src={'/female_icon.png'}
+                        alt='female'
+                        width={20}
+                        height={20}
+                        className='object-contain py-6'
+                      />
+                      <button className="text-sm hover:text-[#ff9900] block py-2">Female</button>
+                    </Link></Dropdown.Item>
+                    <Dropdown.Item key="new"><Link className="flex" href={'/category/others'} key={'others'}>
+                      <Image
+                        src={'/others_icon.png'}
+                        alt='others'
+                        width={20}
+                        height={20}
+                        className='object-contain py-6'
+                      />
+                      <button className="text-sm hover:text-[#ff9900] block py-2">Others</button>
+                    </Link></Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+
               </div>
             </div>
           </div>
         </div>
-       <div className="flex overflow-y-auto justify-center items-start flex-wrap">
+        <div className="flex overflow-y-auto justify-center items-start flex-wrap">
 
           {products.map((item) => {
-              return (
-                <div className="paddings flex-between c-container" key={item.productId}>
-                  <Link
-                    href={`/products/${item.productId}`} key={item.productId}
-                    className="box-container transform overflow-hidden bg-white duration-200 hover:scale-105 cursor-pointer"
-                  >
+            return (
+              <div className="paddings flex-between c-container" key={item.productId}>
+                <Link
+                  href={`/products/${item.productId}`} key={item.productId}
+                  className="box-container transform overflow-hidden bg-white duration-200 hover:scale-105 cursor-pointer"
+                >
 
-                    <Image
-                      className="paddings makeImageCircular image-container2"
-                      width={300}
-                      height={300}
-                      src={item._imageUrls[0]}
-                      alt={''}
-                      object-fit="cover"
-                      overflow="hidden"
-                    //  fill={true}
-                    />
-                    <div className="p-4 text-black/[0.9]">
-                      <h2 className="text-lg font-medium">{item.productName}</h2>
-                      <div className="text-justify text-xs p" dangerouslySetInnerHTML={{ __html: item.highlightDetails }}>
-                      </div>
-
-                      <h4 className="text-blue-500 text-sm font-sm">{'learn more'}</h4>
-
+                  <Image
+                    className="paddings makeImageCircular image-container2"
+                    width={300}
+                    height={300}
+                    src={item._imageUrls[0]}
+                    alt={''}
+                    object-fit="cover"
+                    overflow="hidden"
+                  //  fill={true}
+                  />
+                  <div className="p-4 text-black/[0.9]">
+                    <h2 className="text-lg font-medium">{item.productName}</h2>
+                    <div className="text-justify text-xs p" dangerouslySetInnerHTML={{ __html: item.highlightDetails }}>
                     </div>
-                  </Link>
-                </div>
-              );
-    
-          })}
-        
 
-        </div> 
+                    <h4 className="text-blue-500 text-sm font-sm">{'learn more'}</h4>
+
+                  </div>
+                </Link>
+              </div>
+            );
+
+          })}
+
+
+        </div>
       </div>
     </div>
 

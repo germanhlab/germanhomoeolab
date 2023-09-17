@@ -185,16 +185,17 @@ const Nav = () => {
                 </Dropdown.Trigger>
                 <Dropdown.Menu color="secondary" aria-label="Avatar Actions">
                   <Dropdown.Item key="profile" css={{ height: "$18" }}>
-                    <Text b color="inherit" css={{ d: "flex" }}>
-                      Signed in as
-                    </Text>
+                   
                     {user ?
                       <div className="text-sm font-semibold mb-1">
+                         <Text b color="inherit" css={{ d: "flex" }}>
+                      Signed in as
+                    </Text>
                         {`Hello, ${user?.displayName}`}
                       </div>
                       :
                       <div className="text-lg font-semibold mb-5">
-                        Guest
+                        Hello, Guest
                       </div>
                     }
                   </Dropdown.Item>
@@ -207,7 +208,7 @@ const Nav = () => {
                   <Dropdown.Item key="treatement">
 
                     <Link href={'/products'} className=''>
-                      Ayurvedic Treatement We Offer
+                      Treatement We Offer
                     </Link>
                   </Dropdown.Item>
                   <Dropdown.Item key="appointment" onClick={() => { router.push('/book_an_appointment') }}>
@@ -291,7 +292,7 @@ const Nav = () => {
           </form>
         </div>
       </div>
-      <div className="sm:hidden flex flex-col lg:flex-row md:px-7 gap-[5px] lg:gap-[10px] ">
+      <div className="sm:hidden flex flex-col lg:flex-row md:px-7 gap-[5px] lg:gap-[10px] flex-center ">
         <div className="logo-container">
           <Link href='/' className='flex gap-2 flex-center'>
             <Image
@@ -302,11 +303,11 @@ const Nav = () => {
               className='object-contain'
             />
 
-            <div className="">
+            {/* <div className="">
               <p className='text-red-500 text-lg font-bold'>German Homoeo Lab</p>
 
               <text>Haldia</text>
-            </div>
+            </div> */}
 
           </Link>
         </div>

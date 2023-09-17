@@ -19,7 +19,7 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "firebase": "^9.22.0",
-    "framer-motion": "^10.12.12",
+    "framer-motion": "^10.16.4",
     "moment": "^2.29.4",
     "next": "13.4.3",
     "postcss": "8.4.23",
