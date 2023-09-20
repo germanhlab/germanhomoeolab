@@ -196,7 +196,7 @@ export default function MainSlider(props) {
 
   return (
     <div className="embla">
-      <div className='embla_div sm:h[200px] lg:h-[700px] pt-4'>
+      <div className='embla_div max-sm:h[200px] lg:h-[700px] lg:pt-4'>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {todos.length > 0 && todos.map((todo, index) => (
@@ -213,7 +213,7 @@ export default function MainSlider(props) {
               className="embla__slide__img"
       alt={index}
       effect="blur"
-       height={'auto'}
+      //  height={'auto'}
       src={todo.image} // use normal <img> attributes as props
        width={'100%'} 
       />
