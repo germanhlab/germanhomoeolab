@@ -471,7 +471,7 @@
 .sidePage-container{
   border-radius: 15px;
   width: 20rem;
-  height: 31rem;
+  height: 38rem;
   background-color: #008450;
 }
 
@@ -1055,7 +1055,11 @@ tr:nth-child(even) {
 
 
 
-
+.embla_div{
+  height: 700px;
+  width: 100%;
+  color: #9FA6B2;
+}
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%;

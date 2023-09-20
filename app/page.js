@@ -37,7 +37,7 @@ function Home() {
                     {/* <Slider2/>  */}
 
                     <br />
-                    <div className=" belowSlider-container transform overflow-hidden ">
+                    {/* <div className=" belowSlider-container transform overflow-hidden ">
 
                         <Image
                             className=""
@@ -46,7 +46,7 @@ function Home() {
                            fill= {true}
                         />
                     </div>
-                    <br />
+                    <br /> */}
                 
                     <div className="below2nd-container paddings flex-between">
 

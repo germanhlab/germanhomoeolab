@@ -8,12 +8,12 @@ const LeftNav2 = () => {
     <div className="max-sm:hidden paddings sidePage-container2 text-white">
 
     <div  className='font-bold paddingsSmall'>
-      German Homoeo Lab, (Haldia)
+      German Homoeo Lab 
     </div>
 
    
    <hr className="rounded "/>
-     <div className='paddingsSmall'>Durgachak, ( 1st Floor of H.P Gas Building),F-11, Haldia, West Bengal 721602</div>
+     <div className='paddingsSmall'>Durgachak, Haldia, Upper Stair of HP Gas office, East Medinipur, Pin-721602</div>
     <hr className="rounded"/>
     
 
@@ -22,7 +22,7 @@ const LeftNav2 = () => {
             Whatsapp & Call No.:
           </div>
           <div className='font-bold' onClick={() => { }} >
-            <a href="tel:+919775515533">  +91-9775515533</a>
+            <a href="tel:+919734555533">  +91-9734555533</a>
           </div>
           </div>
          
@@ -31,18 +31,15 @@ const LeftNav2 = () => {
   
 
     <div className='paddingsSmall'>
-            All 7 days open
+            365 Days Open
           </div>
     <hr className="rounded"/>
     
 
     <div className='paddingsSmall'>
-           MON-SAT 10 AM to 6 PM
+           09:00 AM to 08:00 PM
           </div>
     <hr className="rounded"/>
-    <div className='paddingsSmall'>
-           Sunday 12 PM to 6 PM
-          </div>
 
     
     </div>

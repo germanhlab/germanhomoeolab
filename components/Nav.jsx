@@ -66,17 +66,17 @@ const Nav = () => {
               <Image
                 src='/logo.png'
                 alt='logo'
-                width={150}
+                width={200}
                 height={100}
                 className='object-contain'
               />
 
 
-              <div className="max-sm:hidden">
+              {/* <div className="max-sm:hidden">
                 <p className='text-red-500 text-lg font-bold'>German Homoeo Lab</p>
 
                 <text>Haldia</text>
-              </div>
+              </div> */}
 
             </Link>
           </div>

@@ -75,7 +75,7 @@ const usePage = async () => {
       <div className="w-full about-section-row flex-between flex flex-col lg:flex-row md:px-10 gap-[5px] lg:gap-[10px]  ">
         <div className="w-full flex-between h-[8vh] bg-white border shadow-sm rounded-xl py-5 xl:block hidden">
 
-          <div className="w-full about-section-row flex-between flex-row sm:px-5 md:px-10 gap-[5px] lg:gap-[10px] sm:paddingsSmall item-center">
+          <div className="w-full about-section-row flex-between flex-row sm:px-5 md:px-10 gap-[5px] lg:gap-[10px] sm:paddingsSmall lg:paddingsSmall item-center">
             <div>Showing services ({products.length})</div>
             <div className="about-section-row item-center flex-row gap-[5px]">
               <FcFilledFilter />

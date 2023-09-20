@@ -34,7 +34,7 @@ const LoginForm = () => {
 
     const sendToDB = async () => {
         console.log("Document written with ID: "," calling send todb");
-        if(name != null && email != null && phone != null && msg != null && subject != null ){
+        if(name != null && phone != null && msg != null && subject != null ){
             try {
                 var id = v4();
                 var uid = user.uid;
@@ -44,7 +44,7 @@ const LoginForm = () => {
                     id: id,
                     userId: uid,
                     name: name,
-                    email: email,
+                    email: '',
                     phone: phone,
                     status: 'pending',
                     msg: msg,
@@ -101,14 +101,14 @@ const LoginForm = () => {
     }
 
     return  (
-        <div className=' w-full'>
+        <div className=' w-full '>
             <div className='c-wrapperBlack w-full flex-center'>
                 <p className="text-lg text-white paddings">
                     We are for You!
                 </p>
             </div>
 
-            <div className="w-full flex items-center justify-center lg:justify-start">
+            <div className="w-full flex-center items-center justify-center lg:justify-start">
                 <div className="p-8 w-[600px]">
                     <h1 className="text-4xl font-semibold">Contact Us!</h1>
 
@@ -122,7 +122,7 @@ const LoginForm = () => {
                             onChange={(e)=> setName(e.target.value)}
                         />
                     </div>
-                    <div className="mt-10 pl-1 flex flex-col">
+                    {/* <div className="mt-10 pl-1 flex flex-col">
                         <label>Email *</label>
                         <input
                             type="email"
@@ -130,7 +130,7 @@ const LoginForm = () => {
                             required
                             onChange={(e)=> setEmail(e.target.value)}
                         />
-                    </div>
+                    </div> */}
                     <div className="mt-10 pl-1 flex flex-col">
                         <label>Phone Number *</label>
                         <input
