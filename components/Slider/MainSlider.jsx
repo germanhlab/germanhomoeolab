@@ -213,7 +213,7 @@ export default function MainSlider(props) {
               className="embla__slide__img"
       alt={index}
       effect="blur"
-      height={'700px'}
+      // height={'700px'}
       src={todo.image} // use normal <img> attributes as props
        width={'100%'} 
       />
