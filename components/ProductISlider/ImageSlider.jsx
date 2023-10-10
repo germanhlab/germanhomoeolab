@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import './ImageSlider.css';
-function ImageSlider ({ imgs }) {
+function ImageSlider ({ imgs, imgIndex }) {
   
 //   const imgs=[
 //     {id:0,value:"https://wallpaperaccess.com/full/2637581.jpg"},
@@ -9,7 +9,20 @@ function ImageSlider ({ imgs }) {
 //     {id:2,value:"https://source.unsplash.com/user/c_v_r/100x100"},
 //   ]
   const [wordData,setWordData]=useState(imgs[0])
-  const [val,setVal] = useState(0)
+  const [val,setVal] = useState(0);
+ 
+
+  useEffect(() => {
+
+    console.log(imgIndex)
+    setVal(imgIndex)
+    const wordSlider=imgs[imgIndex];
+    setWordData(wordSlider)
+    // if (loadingF) {
+    //   getProducts();
+    // }
+  }, []);
+
   const handleClick=(index)=>{
     console.log(index)
     setVal(index)

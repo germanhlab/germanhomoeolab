@@ -68,7 +68,7 @@ function Home() {
                     {/* Whatsapp Widget */}
                     <div className="fab-container" >
                        
-                        <Link href={'https://api.whatsapp.com/send/?phone=919775515533&text&type=phone_number&app_absent=0'}>
+                        <Link href={'https://api.whatsapp.com/send/?phone=919734555533&text&type=phone_number&app_absent=0'}>
                             <Image
                                 className="makeImageCircular"
                                 width={60}

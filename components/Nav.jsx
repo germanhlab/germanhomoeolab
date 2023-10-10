@@ -333,7 +333,7 @@ const Nav = () => {
             </a>
             
           </div>
-          <a href="tel:+919775515533">Call Now!</a>
+          <a href="tel:+919734555533">Call Now!</a>
       
         </div>
         <div className="vl-2"></div>
@@ -440,7 +440,7 @@ const Nav = () => {
         <Marquee className="color: #2A349A; font-size: 14px; font-family: 'Open Sans', sans-serif; background-color: #ffe293; height: 25px; padding-top: 3px; vertical-align: middle;">
 
           <Text>
-            German Homoeo Lab has no other online payment methods and will never ask to share OTPs over the phone. Be aware, be safe from online fraud activities. For any queries, call: +919775515533                          .
+            German Homoeo Lab has no other online payment methods and will never ask to share OTPs over the phone. Be aware, be safe from online fraud activities. For any queries, call: +919734555533                          .
           </Text>
           <br />
         </Marquee>
