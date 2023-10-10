@@ -125,9 +125,9 @@ const usePage = ({ params }) => {
            <div className="text-white text-[20px] w-full max-w-[1360px] mx-auto sticky top-[50px]">
       
       <img src={todo._imageUrls[imgPrefIndex]} height="300" width="500" /> 
-      <div className='flex_row sm:hidden'>
+      <div className=' sm:hiddenflex_row'>
         {todo._imageUrls.map((data,i)=>
-        <div className="thumbnail" key={i} >
+        <div className="thumbnail sm:hidden" key={i} >
           <img className={imgPrefIndex==i?"clicked":""} src={data} onClick={()=> setImgPrefIndex(i)} height="60" width="100" />
         </div>
         )}
