@@ -153,8 +153,7 @@ const usePage = ({ params }) => {
           {/* <div className="flex-[1] py-1">
          
           <img className={""} src={todo._imageUrls[0]} onClick={()=> setImgPrefIndex(3)} height="60" width="100" />
-<div  className="text-justify" dangerouslySetInnerHTML={{__html: todo.productDescription}}> 
-</div> 
+
 
             <div className="text-lg font-bold mb-5">
               For more queries and Treatment
@@ -219,26 +218,30 @@ const usePage = ({ params }) => {
 
            {/* right column start */}
            <div className="flex-[1] py-3">
-            {/* <Scrollbar> */}
-            {/* PRODUCT TITLE */}
-            <div className="text-[34px] font-semibold mb-2 leading-tight">
-              {/* {p.name} */}
-              Arthritis
+             {/* PRODUCT TITLE */}
+             <div className="text-[34px] font-semibold mb-2 leading-tight">
+              {todo.productName}
+              
             </div>
+            <br/>
+           <div  className="text-justify" dangerouslySetInnerHTML={{__html: todo.productDescriptionEnglish}}> 
+</div> 
 
+            {/* <Scrollbar> */}
+           
 
             {/* PRODUCT SUBTITLE */}
-            <div className="text-sm text-justify font-semibold mb-1">
-              {/* {p.subtitle} */}
+            {/* <div  className="text-justify" > {todo.productDescriptionEnglish}</div> */}
+            {/* <div className="text-sm text-justify font-semibold mb-1">
+            
               Arthritis is a term used to describe inflammation of the joints. It is a chronic condition that can affect people of all ages, but it is more common among older adults. There are many different types of arthritis, but the most common ones include osteoarthritis and rheumatoid arthritis.
-            </div>
+            </div> */}
             <br />
 
-            {/* PRODUCT PRICE */}
-            <div className="flex items-center">
+         
+            {/* <div className="flex items-center">
               <p className="mr-2 text-sm text-black text-justify">
-                {/* MRP : &#8377; 100 */}
-                {/* {p.price} */}
+               
                 <span className='flex-start gap-[5px]'>
                 <img className={"makeImageCircular"} src={todo._imageUrls[0]} onClick={()=> setImgPrefIndex(0)} height="30" width="30" />
 
@@ -251,52 +254,40 @@ const usePage = ({ params }) => {
                 2.Swelling and inflammation around the joints. The affected joints may appear red, warm, and tender to the touch.
                 </span>
                 <span className='flex-start gap-[5px]'>
-                {/* <Image
-                      className="paddings makeImageCircular image-container-text-side"
-                      width={30}
-                      height={30}
-                      src={todo._imageUrls[3]}
-                      alt={''}
-                      object-fit="cover"
-                      overflow="hidden"
-                    //  fill=
-                    {true}
-                    /> */}
+          
                      <img className={"makeImageCircular"} src={todo._imageUrls[2]} onClick={()=> setImgPrefIndex(2)} height="30" width="30" />
 
                 3.Difficulty moving the affected joint through its full range of motion. It may feel like the joint is "locked" or has a reduced range of movement.
 </span>
               </p>
-
-
-              {/* {p.original_price && (
-                        <>
-                            <p className="text-base  font-medium line-through">
-                                &#8377;{p.original_price}
-                            </p>
-                            <p className="ml-auto text-base font-medium text-green-500">
-                                {getDiscountedPricePercentage(
-                                    p.original_price,
-                                    p.price
-                                )}
-                                % off
-                            </p>
-                        </>
-                    )} */}
-            </div>
-            <br />
-
+            </div> */}
             <div className="flex items-center">
-              <p className="mr-2 text-sm text-justify font-semibold">
-                {/* {p.name} */}
-                আর্থরাইটিস হল জয়েন্টের একটি প্রদাহ । এটি একটি চিরস্থায়ী অবস্থা যা সমস্ত বয়সের মানুষদের প্রভাবিত করতে পারে, কিন্তু সবচেয়ে বেশি প্রায় পূর্ববয়সী ব্যক্তিদেরকে প্রভাবিত করে। এখানে অনেক ধরণের আর্থরাইটিস রয়েছে, কিন্তু সবচেয়ে সাধারণ দুটি হল অস্টিওআর্থ্রাইটিস এবং রিউমাটয়েড আর্থরাইটিস।
+              <p className="mr-2 text-sm text-justify ">
+              {todo.englishSymptoms.map((item2,index2) => (
+
+<span className='flex-start gap-[5px]'>
+
+<img className={"makeImageCircular"} src={todo._imageUrls[index2]} onClick={()=> setImgPrefIndex(index2)} height="30" width="30" />
+{todo.englishSymptoms[index2] }
+</span>
+             )
+              )}
               </p>
             </div>
             <br />
+            <div  className="text-justify" dangerouslySetInnerHTML={{__html: todo.productDescriptionBangla}}> 
+</div> 
+            {/* <div className="flex items-center">
+              <p className="mr-2 text-sm text-justify font-semibold">
+               
+                আর্থরাইটিস হল জয়েন্টের একটি প্রদাহ । এটি একটি চিরস্থায়ী অবস্থা যা সমস্ত বয়সের মানুষদের প্রভাবিত করতে পারে, কিন্তু সবচেয়ে বেশি প্রায় পূর্ববয়সী ব্যক্তিদেরকে প্রভাবিত করে। এখানে অনেক ধরণের আর্থরাইটিস রয়েছে, কিন্তু সবচেয়ে সাধারণ দুটি হল অস্টিওআর্থ্রাইটিস এবং রিউমাটয়েড আর্থরাইটিস।
+              </p>
+            </div> */}
+            <br />
 
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <p className="mr-2 text-sm text-justify ">
-                {/* {p.name} */}
+              
                 <span className='flex-start gap-[5px]'>
                 <img className={"makeImageCircular"} src={todo._imageUrls[0]} onClick={()=> setImgPrefIndex(0)} height="30" width="30" />
 
@@ -314,20 +305,36 @@ const usePage = ({ params }) => {
                 আক্রান্ত জয়েন্টকে তার পূর্ণ পরিসরের গতির মাধ্যমে সরাতে অসুবিধা। এটি মনে হতে পারে যে জয়েন্টটি "লকড" বা চলাচলের একটি কম পরিসর রয়েছে
                 </span>
               </p>
-            </div>
-            <br />
+            </div> */}
+<div className="flex items-center">
+              <p className="mr-2 text-sm text-justify ">
+              {todo.banglaSymptoms.map((item2,index2) => (
 
-            <div className="flex items-center">
-              <p className="mr-2 text-sm text-justify font-semibold">
-                {/* {p.name} */}
-                आर्थराइटिस एक शब्द है जिसका उपयोग जोड़ों के संचार की सूजन को वर्णित करने के लिए किया जाता है। यह एक दीर्घकालिक स्थिति है जो सभी आयुवर्ग के लोगों को प्रभावित कर सकती है, लेकिन यह अधिकांशतः वृद्धावस्था में आम होती है। अर्थराइटिस के कई विभिन्न प्रकार होते हैं, लेकिन सबसे सामान्य रूप से ओस्टियोआर्थ्राइटिस और रेहुमाटॉइड आर्थराइटिस शामिल होते हैं।
+<span className='flex-start gap-[5px]'>
+
+<img className={"makeImageCircular"} src={todo._imageUrls[index2]} onClick={()=> setImgPrefIndex(index2)} height="30" width="30" />
+{todo.banglaSymptoms[index2] }
+</span>
+             )
+              )}
               </p>
             </div>
+
+
+            <br />
+            <div  className="text-justify" dangerouslySetInnerHTML={{__html: todo.productDescriptionHindi}}> 
+</div> 
+            {/* <div className="flex items-center">
+              <p className="mr-2 text-sm text-justify font-semibold">
+             
+                आर्थराइटिस एक शब्द है जिसका उपयोग जोड़ों के संचार की सूजन को वर्णित करने के लिए किया जाता है। यह एक दीर्घकालिक स्थिति है जो सभी आयुवर्ग के लोगों को प्रभावित कर सकती है, लेकिन यह अधिकांशतः वृद्धावस्था में आम होती है। अर्थराइटिस के कई विभिन्न प्रकार होते हैं, लेकिन सबसे सामान्य रूप से ओस्टियोआर्थ्राइटिस और रेहुमाटॉइड आर्थराइटिस शामिल होते हैं।
+              </p>
+            </div> */}
             <br />
 
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <p className="mr-2 text-sm text-black text-justify">
-                {/* {p.name} */}
+              
                 <span className='flex-start gap-[5px]'>
                 <img className={"makeImageCircular"} src={todo._imageUrls[0]} onClick={()=> setImgPrefIndex(0)} height="30" width="30" />
 
@@ -343,6 +350,19 @@ const usePage = ({ params }) => {
 
                 3. प्रभावित जोड़ को गति की पूरी श्रृंखला के माध्यम से हिलाने में कठिनाई। ऐसा महसूस हो सकता है कि जोड़ "लॉक" है या इसमें गति की सीमा कम है
                     </span>
+              </p>
+            </div> */}
+            <div className="flex items-center">
+              <p className="mr-2 text-sm text-justify ">
+              {todo.hindiSymptoms.map((item2,index2) => (
+
+<span className='flex-start gap-[5px]'>
+
+<img className={"makeImageCircular"} src={todo._imageUrls[index2]} onClick={()=> setImgPrefIndex(index2)} height="30" width="30" />
+{todo.hindiSymptoms[index2] }
+</span>
+             )
+              )}
               </p>
             </div>
             <br />
