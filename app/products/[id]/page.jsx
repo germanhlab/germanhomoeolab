@@ -267,9 +267,9 @@ const usePage = ({ params }) => {
 
 <span className='flex-start gap-[5px]'>
 
-<img className={"makeImageCircular"} src={todo._imageUrls[index2]} onClick={()=> setImgPrefIndex(index2)} height="30" width="30" />
+<img className={"makeImageCircular"} src={todo._imageUrls[index2 + 1]} onClick={()=> setImgPrefIndex(index2 + 1)} height="30" width="30" />
 {todo.englishSymptoms[index2] }
-</span>
+</span> 
              )
               )}
               </p>
@@ -312,7 +312,7 @@ const usePage = ({ params }) => {
 
 <span className='flex-start gap-[5px]'>
 
-<img className={"makeImageCircular"} src={todo._imageUrls[index2]} onClick={()=> setImgPrefIndex(index2)} height="30" width="30" />
+<img className={"makeImageCircular"} src={todo._imageUrls[index2 + 1]} onClick={()=> setImgPrefIndex(index2 + 1)} height="30" width="30" />
 {todo.banglaSymptoms[index2] }
 </span>
              )
@@ -358,7 +358,7 @@ const usePage = ({ params }) => {
 
 <span className='flex-start gap-[5px]'>
 
-<img className={"makeImageCircular"} src={todo._imageUrls[index2]} onClick={()=> setImgPrefIndex(index2)} height="30" width="30" />
+<img className={"makeImageCircular"} src={todo._imageUrls[index2 + 1]} onClick={()=> setImgPrefIndex(index2 + 1)} height="30" width="30" />
 {todo.hindiSymptoms[index2] }
 </span>
              )
