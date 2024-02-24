@@ -1,13 +1,16 @@
 //import Feed from "@components/feed"
-
+'use client'
 
 import LeftNav from "@components/LeftNav/LeftNav"
 import LeftNav2 from "@components/LeftNav2/LeftNav2"
 import Disease from "@components/ListComp/Disease"
+import PopupGfg from "@components/PopupForm"
 import MainSlider from "@components/Slider/MainSlider"
 import Slider from "@components/Slider/Slider"
 import Image from "next/image"
 import Link from 'next/link'
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 // import BootstrapCarousel from "./carousels/Bootstrap"
 // import Slider2 from "@components/Slider2/page"
 // import EmblaCarousel from './EmblaCarousel'
@@ -18,6 +21,10 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 
 function Home() {
+
+    const time = new Date();
+  time.setSeconds(time.getSeconds() + 5); // 10 minutes timer
+
     return (
         
         <section className="w-full">
@@ -26,6 +33,33 @@ function Home() {
                     <LeftNav2 />
                     <br />
                     <LeftNav />
+                    {/* <div>
+            <h4>Popup - GeeksforGeeks</h4>
+            <Popup trigger=
+                {<button> Click to open modal </button>} 
+                modal nested>
+                {
+                    close => (
+                        <div className='modal'>
+                            <div className='content'>
+                                Welcome to GFG!!!
+                            </div>
+                            <div>
+                                <button onClick=
+                                    {() => close()}>
+                                        Close modal
+                                </button>
+                            </div>
+                        </div>
+                    )
+                }
+            </Popup>
+        </div> */}
+<PopupGfg expiryTimestamp={time}/>
+
+                    {/* <Popup trigger={<button> Trigger</button>} position="right center">
+    <div>Popup content here !!</div>
+  </Popup> */}
                 </div>
                 {/* <div className="blank-container" /> */}
 
