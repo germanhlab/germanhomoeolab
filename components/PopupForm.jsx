@@ -125,7 +125,7 @@ const PopupGfg = ({ expiryTimestamp }) => {
             &times;
           </a>
           <div className='c-wrapperBlack w-full flex-center'>
-                <p className="text-lg text-white paddings">
+                <p className="text-medium text-white paddings">
                     Book an Appointment
                 </p>
             </div>
@@ -150,7 +150,7 @@ const PopupGfg = ({ expiryTimestamp }) => {
                                 <input
                                     // value={valueTime}
                                     type="text"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                                    className="font-sm border-b border-black p-1 outline-0 focus-within:border-blue-400"
                                     required
                                     onChange={(e) => setName(e.target.value)}
                                 />
@@ -162,7 +162,7 @@ const PopupGfg = ({ expiryTimestamp }) => {
                                 <input
                                     // value={valueTime}
                                     type="phone"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                                    className="font-sm border-b border-black p-1 outline-0 focus-within:border-blue-400"
                                     required
                                     onChange={(e) => setPhone(e.target.value)}
                                 />
@@ -176,7 +176,7 @@ const PopupGfg = ({ expiryTimestamp }) => {
                                 <input
                                     // value={valueTime}
                                     type="text"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                                    className="font-sm border-b border-black p-1 outline-0 focus-within:border-blue-400"
                                     required
                                     onChange={(e) => setAge(e.target.value)}
                                 />
@@ -187,13 +187,13 @@ const PopupGfg = ({ expiryTimestamp }) => {
                                 <input
                                     value={dateC}
                                     type="text"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
+                                    className="font-sm border-b border-black p-1 outline-0 focus-within:border-blue-400"
                                     required
                                     onChange={(e) => setDate(e.target.value)}
                                 />
                             </div>
                            
-                            <div className="mt-3 p-1 flex flex-col text-sm">
+                            <div className="mt-1 p-1 flex flex-col text-sm">
                                 <label>Gender*</label>
                                 <Radio.Group orientation="horizontal" value={gender} onChange={setGender}>
                                     <Radio value="Male" color="primary" isSquared>
@@ -209,7 +209,7 @@ const PopupGfg = ({ expiryTimestamp }) => {
                             </div>
 
                            
-                            <div className="mt-3 p-1 flex flex-col">
+                            <div className="mt-1 p-1 flex flex-col">
                                 <label>Treatment for*</label>
                                 <Combobox value={selected} onChange={setSelected}>
                                     <div className="relative mt-1">
