@@ -51,12 +51,12 @@ function DesignGallery() {
 
 
   return (
-    <div className="App">
+    <div className="w-full">
       {/* <Navbar/>
       <br/> */}
-      <div>
+      <div className="w-full bg-black bg-opacity-100 flex-center">
         <br/>
-        <h6 className="text-lg"  style= { { fontSize: 50 }}>Gallery</h6>
+        <h6 className="text-lg p-10 font-bold text-white"  style= { { fontSize: 50 }}>Gallery</h6>
         <br/>
         {/* <span>If you’re on the lookout for simple home interior designs, look no further than HomeLane for end- to-end interior design services.</span>
        */}
@@ -67,10 +67,13 @@ function DesignGallery() {
           <div  key={movie.productId} className="paddings">
             <div key={movie.productId} className="flex bgImage paddings w-[350px] h-[400px]"  style={{ backgroundImage: `url(${movie._imageUrls[0]})`, backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
-            <h2 style={{fontSize: 28, color: movie.approved ? "white" : "red" }}>
+            <div >
+            <h2 className="bg-opacity-50 bg-black paddingsSmall" style={{fontSize: 28, color: movie.approved ? "white" : "red" }}>
               {movie.productName}
             </h2>
-           
+            </div>
+            <br/>
+        
             {/* <img src={movie.imageUrl}
             height={300}
             width={300}
