@@ -34,32 +34,10 @@ function Home() {
                     <br />
                     <LeftNav />
                     {/* <div>
-            <h4>Popup - GeeksforGeeks</h4>
-            <Popup trigger=
-                {<button> Click to open modal </button>} 
-                modal nested>
-                {
-                    close => (
-                        <div className='modal'>
-                            <div className='content'>
-                                Welcome to GFG!!!
-                            </div>
-                            <div>
-                                <button onClick=
-                                    {() => close()}>
-                                        Close modal
-                                </button>
-                            </div>
-                        </div>
-                    )
-                }
-            </Popup>
-        </div> */}
-<PopupGfg expiryTimestamp={time}/>
+       
+{/* <PopupGfg expiryTimestamp={time}/> */}
 
-                    {/* <Popup trigger={<button> Trigger</button>} position="right center">
-    <div>Popup content here !!</div>
-  </Popup> */}
+            
                 </div>
                 {/* <div className="blank-container" /> */}
 

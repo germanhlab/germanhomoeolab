@@ -124,6 +124,10 @@ const Nav = () => {
                       Treatement List
                     </Link></div>
             <div className="vl"></div>
+            <div className="white-text fo"><Link href={'/gallery'} className=''>
+                      Gallery
+            </Link></div>
+            <div className="vl"></div>
             <div className="white-text "><Link href='/why_choose_us' className=''>
                       Why Choose Us?
                     </Link></div>
@@ -210,6 +214,12 @@ const Nav = () => {
                     <Link href={'/products'} className=''>
                       Treatement We Offer
                     </Link>
+                  </Dropdown.Item>
+                  <Dropdown.Item key="gallery">
+
+                  <Link href={'/gallery'} className=''>
+                    Gallery
+                  </Link>
                   </Dropdown.Item>
                   <Dropdown.Item key="appointment" onClick={() => { router.push('/book_an_appointment') }}>
 

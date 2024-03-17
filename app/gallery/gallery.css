@@ -1,0 +1,88 @@
+.bgImage {
+    padding: 5px;
+    align-self: center;
+    /* background: -webkit-gradient(linear,left bottom,left top,color-stop(12.98%,rgba(0,0,0,.65)),color-stop(38.93%,transparent));
+    background: -moz-linear-gradient(bottom,rgba(0,0,0,.65) 12.98%,transparent 38.93%); */
+    /* background: linear-gradient(0deg,rgba(0,0,0,.65) 12.98%,transparent 38.93%); */
+    border-radius: 8px;
+    height: 400px;
+    justify-self: center;
+    position: relative;
+    /* color: black;
+    width: 60%; */
+}
+
+.movies-list-item {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+}
+
+.about-section-row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.flex-center {
+    @apply flex justify-center items-center;
+  }
+  
+  .flex-start {
+    @apply flex justify-start items-start;
+  }
+  
+  .flex-end {
+    @apply flex justify-end items-center;
+  }
+  
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+  .paddings {
+    padding: 1.5rem;
+  }
+  
+  .paddingsSmall {
+    padding: 0.5rem;
+  }
+  
+  .paddingsTop {
+    paddingsTop: 1.5rem;
+  }
+  
+  .paddingsBottom {
+    paddingsBottom: 7.5rem;
+  }
+  
+  .paddingsLeft {
+    paddingsLeft: 7.5rem;
+  }
+  
+  .paddingsRight {
+    paddingsRight: 7.5rem;
+  }
+  
+.productCategories_categoriesContainer__2mshM {
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: auto;
+    row-gap: 40px;
+    width: 85%;
+}
+
+.productCategories_category__bN8il {
+    align-self: center;
+    /* background: -webkit-gradient(linear,left bottom,left top,color-stop(12.98%,rgba(0,0,0,.65)),color-stop(38.93%,transparent));
+    background: -moz-linear-gradient(bottom,rgba(0,0,0,.65) 12.98%,transparent 38.93%); */
+    /* background: linear-gradient(0deg,rgba(0,0,0,.65) 12.98%,transparent 38.93%); */
+    border-radius: 8px;
+    height: 400px;
+    justify-self: center;
+    position: relative;
+    width: 100%;
+}
