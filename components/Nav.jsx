@@ -120,11 +120,11 @@ const Nav = () => {
                      Home
                     </Link></div>
             <div className="vl"></div>
-            <div className="white-text fo"><Link href={'/products'} className=''>
+            <div className="white-text"><Link href={'/products'} className=''>
                       Treatement List
                     </Link></div>
             <div className="vl"></div>
-            <div className="white-text fo"><Link href={'/gallery'} className=''>
+            <div className="white-text"><Link href={'/gallery'} className=''>
                       Gallery
             </Link></div>
             <div className="vl"></div>
@@ -233,12 +233,12 @@ const Nav = () => {
                       Why Choose Us
                     </Link>
                   </Dropdown.Item>
-                  <Dropdown.Item key="photo_gallery">
+                  {/* <Dropdown.Item key="photo_gallery">
 
                     <Link href='' className=''>
                       Photo Gallery
                     </Link>
-                  </Dropdown.Item>
+                  </Dropdown.Item> */}
                   <Dropdown.Item key="about_us">
                     <Link href='/about_us' className=''>
                       About Us

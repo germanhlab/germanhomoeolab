@@ -1,10 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import { Auth } from "../../components/auth";
-// import { db, auth, storage } from "../../firebase";
-// import {useNavigate} from "react-router-dom";
-
 import { auth } from "@firebase/firebase";
 import { db  } from "@firebase/firebase";
 
@@ -20,8 +16,7 @@ import {
 } from "firebase/firestore";
 
 
-import "./gallery.css";
-// import Navbar from "../../components/navBar/NavBar";
+// import "./gallery.css";
 
 
 function DesignGallery() {
@@ -52,8 +47,7 @@ function DesignGallery() {
 
   return (
     <div className="w-full">
-      {/* <Navbar/>
-      <br/> */}
+  
       <div className="w-full bg-black bg-opacity-100 flex-center">
         <br/>
         <h6 className="text-lg p-10 font-bold text-white"  style= { { fontSize: 50 }}>Gallery</h6>
