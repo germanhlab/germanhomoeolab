@@ -115,7 +115,7 @@ const Nav = () => {
 
           <div className="max-sm:hidden flex-between ">
             <div className="paddingsSmall"></div>
-            <div className="vl"></div>
+          
             <div className="white-text "><Link href={'/'} className=''>
                      Home
                     </Link></div>
