@@ -36,6 +36,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Fragment } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { Input } from "@nextui-org/input";
+import axios from "axios";
 
 const usePage = () => {
 
@@ -65,7 +67,7 @@ const usePage = () => {
     const [maritalStatus, setMaritalStatus] = React.useState('Married');
     var [disease, setDisease] = useState('');
 
-
+    const [canClick, setCanClick] = useState(true)
 
     const [valueTime, onChangeTime] = useState('10:00');
     const [dateC, setDate] = useState();
@@ -73,6 +75,7 @@ const usePage = () => {
     const [email, setEmail] = useState();
     const [age, setAge] = useState();
     const [phone, setPhone] = useState();
+
 
 
     const people = [
@@ -105,17 +108,17 @@ const usePage = () => {
 
     const router = useRouter();
 
-    useEffect(() => {
+    // useEffect(() => {
 
 
-        if (!loading && !user) {
-            router.push("/login");
-        }
-        if (!!user) {
-            console.log(user.uid);
-            //    getTodos();
-        }
-    }, [user, loading]);
+    //     if (!loading && !user) {
+    //         router.push("/login");
+    //     }
+    //     if (!!user) {
+    //         console.log(user.uid);
+    //         //    getTodos();
+    //     }
+    // }, [user, loading]);
 
 
     const bookingHandler = async () => {
@@ -123,45 +126,91 @@ const usePage = () => {
         if (name != null || email != null || phone != null || age != null) {
             try {
 
-                var id = v4();
-                var uid = user.uid;
-                var myTimestamp = Timestamp.fromDate(new Date());
 
-                await setDoc(doc(db, "bookedAppointments", id), {
-                    id: id,
-                    userId: uid,
-                    name: name,
-                    email: email,
-                    phone: phone,
-                    age: age,
-                    maritalStatus: maritalStatus.toString(),
-                    gender: gender.toString(),
-                    disease: `${selected.name}`,
-                    status: 'pending',
-                    date: myTimestamp,
-                    prefdate: dateC,
-                    prefTime: valueTime,
-                    approvedTime: '',
-                    adminCallbackTime: '',
-                    remarks: '',
-                    completed: false,
-                    approved: false,
+                var data = {
+                    service_id: 'service_0dv3jna',
+                    template_id: 'template_fc8zhsr',
+                    user_id: '104KN49SMmGFepGCe',
+                    template_params: {
+                      'to_name': 'German Homoeo Lab',
+                      'from_name': name,
+                      'phone': phone,
+                      'age': age,
+                      'date': dateC,
+                      'time': valueTime,
+                      'gender': gender.toString(),
+                      'marital_status':  maritalStatus.toString(),
+                      'treatement_for': `${selected.name}`,
+                      'web_address': 'https://www.germanhomoeolab.in/',
+                      'message': 'msg',
+                    }
+                  };
+      
+                  setCanClick(false);
+                  const res = await axios.post('https://api.emailjs.com/api/v1.0/email/send', data);
+                  console.log('msg sent', '');
+                  setName('');
+                  setEmail('');
+                //   setPhone(null);
+                //   setAge(null);
+                //   setDate(null);
+                //   setMaritalStatus(true);
 
-                }).then(() => {
-                    // subject = '',
+                  toast.success('Application Submitted Successfuly!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                  });
 
-                        toast.success("Appointment request Submitted Successfully!", {
-                            position: "top-right",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: "colored",
-                        });
-                });
-                console.log("Document written with ID: ", id);
+                //   router.push("/login");
+                
+
+
+
+                // var id = v4();
+                // var uid = user.uid;
+                // var myTimestamp = Timestamp.fromDate(new Date());
+
+                // await setDoc(doc(db, "bookedAppointments", id), {
+                //     id: id,
+                //     userId: uid,
+                //     name: name,
+                //     email: email,
+                //     phone: phone,
+                //     age: age,
+                //     maritalStatus: maritalStatus.toString(),
+                //     gender: gender.toString(),
+                //     disease: `${selected.name}`,
+                //     status: 'pending',
+                //     date: myTimestamp,
+                //     prefdate: dateC,
+                //     prefTime: valueTime,
+                //     approvedTime: '',
+                //     adminCallbackTime: '',
+                //     remarks: '',
+                //     completed: false,
+                //     approved: false,
+
+                // }).then(() => {
+                //     // subject = '',
+
+                //         toast.success("Appointment request Submitted Successfully!", {
+                //             position: "top-right",
+                //             autoClose: 5000,
+                //             hideProgressBar: false,
+                //             closeOnClick: true,
+                //             pauseOnHover: true,
+                //             draggable: true,
+                //             progress: undefined,
+                //             theme: "colored",
+                //         });
+                // });
+                // console.log("Document written with ID: ", id);
 
 
                 //   getTodos();
@@ -204,115 +253,25 @@ const usePage = () => {
             </div>
             {/* <br /> */}
 
-            <div className="appointmentContainer2 ">
+            <div className="appointmentContainer2 flex-center">
                 {/* <br />
                 <button type="button" class="collapsible">Open Collapsible</button>
                 <div class="content">
                     <p>Lorem ipsum...</p>
                 </div> */}
 
-                <div className="flex flex-col lg:flex-row md:px-10 gap-[5px] lg:gap-[10px] ">
+                <div className="flex flex-col lg:flex-row md:px-10 gap-[2px] lg:gap-[5px] ">
 
                     {/* Forms input */}
-                    <div class="about-section-col">
+                    <div className="p-6 w-[620px] max-sm:w-[100%]">
+                    <div class="p-4 shadow-xl w-[600px] max-sm:w-[100%]">
+
+            
 
                         <form onSubmit={(e) => e.preventDefault()}>
-                            {/* Name Input */}
-                            <div className="mt-10 pl-1 flex flex-col">
-                                <label>Full Name *</label>
-                                <input
-                                    // value={valueTime}
-                                    type="text"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
-                                    required
-                                    onChange={(e) => setName(e.target.value)}
-                                />
-                            </div>
 
-                            {/* Phone */}
-                            <div className="mt-10 pl-1 flex flex-col">
-                                <label>Phone*</label>
-                                <input
-                                    // value={valueTime}
-                                    type="phone"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
-                                    required
-                                    onChange={(e) => setPhone(e.target.value)}
-                                />
-                            </div>
-
-                            {/* Email */}
-                            <div className="mt-10 pl-1 flex flex-col">
-                                <label>Email Id*</label>
-                                <input
-                                    // value={valueTime}
-                                    type="email"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
-                                    required
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
-
-                            {/* Age */}
-                            <div className="mt-10 pl-1 flex flex-col">
-                                <label>Age*</label>
-                                <input
-                                    // value={valueTime}
-                                    type="text"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
-                                    required
-                                    onChange={(e) => setAge(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="mt-10 pl-1 flex flex-col">
-                                <label>Date*</label>
-                                <input
-                                    value={dateC}
-                                    type="text"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
-                                    required
-                                    onChange={(e) => setDate(e.target.value)}
-                                />
-                            </div>
-                            <div className="mt-10 pl-1 flex flex-col">
-                                <label>Preferred Time*</label>
-                                <input
-                                    // value={valueTime}
-                                    type="text"
-                                    className="font-medium border-b border-black p-4 outline-0 focus-within:border-blue-400"
-                                    required
-                                    onChange={(e) => onChangeTime(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="mt-5 pl-1 flex flex-col">
-                                <label>Gender*</label>
-                                <Radio.Group orientation="horizontal" value={gender} onChange={setGender}>
-                                    <Radio value="Male" color="primary" isSquared>
-                                        Male
-                                    </Radio>
-                                    <Radio value="Female" color="secondary" isSquared>
-                                        Female
-                                    </Radio>
-                                    <Radio value="Others" color="success" isSquared>
-                                        Others
-                                    </Radio>
-                                </Radio.Group>
-                            </div>
-
-                            <div className="mt-5 pl-1 flex flex-col">
-                                <label>Marital Status*</label>
-                                <Radio.Group orientation="horizontal" value={maritalStatus} onChange={setMaritalStatus}>
-                                    <Radio value="Married" color="primary" isSquared>
-                                        Married
-                                    </Radio>
-                                    <Radio value="Unmarried" color="secondary" isSquared>
-                                        Unmarried
-                                    </Radio>
-                                </Radio.Group>
-                            </div>
-                            <div className="mt-5 pl-1 flex flex-col">
+                            {/* TrateMent For */}
+                        <div className="mt-5 pl-1 flex flex-col">
                                 <label>Treatment for*</label>
                                 <Combobox value={selected} onChange={setSelected}>
                                     <div className="relative mt-1">
@@ -378,25 +337,133 @@ const usePage = () => {
                                 </Combobox>
                             </div>
 
+    
+
+                            {/* Name Input */}
+                            <div className="mt-5 pl-1 flex flex-col">
+                                <label>Full Name *</label>
+                                <input
+                                    // value={valueTime}
+                                    type="text"
+                                    className="font-medium border-b border-black p-2 outline-0 focus-within:border-blue-400"
+                                    required
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
+
+
+
+
+                            {/* Phone */}
+                            <div className="mt-5 pl-1 flex flex-col">
+                                <label>Phone*</label>
+                                <input
+                                    // value={valueTime}
+                                    label='Phone'
+                                
+                                    type="phone"
+                                    className="font-medium border-b border-black p-2 outline-0 focus-within:border-blue-400"
+                                    required
+                                    onChange={(e) => setPhone(e.target.value)}
+                                />
+                            </div>
+
+                            {/* Email */}
+                            {/* <div className="mt-5 pl-1 flex flex-col">
+                                <label>Email Id*</label>
+                                <input
+                                    // value={valueTime}
+                                    type="email"
+                                    className="font-medium border border-black p-2 outline-0 focus-within:border-blue-400"
+                                    required
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div> */}
+
+                            {/* Age */}
+                            <div className="mt-5 pl-1 flex flex-col">
+                                <label>Age*</label>
+                                <input
+                                    // value={valueTime}
+                                    type="text"
+                                    className="font-medium border-b border-black p-2 outline-0 focus-within:border-blue-400"
+                                    required
+                                    onChange={(e) => setAge(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="mt-5 pl-1 flex flex-col">
+                                <label>Date*</label>
+                                <input
+                                    value={dateC}
+                                    type="text"
+                                    className="font-medium border-b border-black p-2 outline-0 focus-within:border-blue-400"
+                                    required
+                                    onChange={(e) => setDate(e.target.value)}
+                                />
+                            </div>
+                            <div className="mt-5 pl-1 flex flex-col">
+                                <label>Preferred Time*</label>
+                                <input
+                                    // value={valueTime}
+                                    type="text"
+                                    className="font-medium border-b border-black p-2 outline-0 focus-within:border-blue-400"
+                                    required
+                                    onChange={(e) => onChangeTime(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="mt-5 pl-1 flex flex-col">
+                                <label>Gender*</label>
+                                <Radio.Group orientation="horizontal" value={gender} onChange={setGender}>
+                                    <Radio value="Male" color="primary" isSquared>
+                                        Male
+                                    </Radio>
+                                    <Radio value="Female" color="secondary" isSquared>
+                                        Female
+                                    </Radio>
+                                    <Radio value="Others" color="success" isSquared>
+                                        Others
+                                    </Radio>
+                                </Radio.Group>
+                            </div>
+
+                            <div className="mt-5 pl-1 flex flex-col">
+                                <label>Marital Status*</label>
+                                <Radio.Group orientation="horizontal" value={maritalStatus} onChange={setMaritalStatus}>
+                                    <Radio value="Married" color="primary" isSquared>
+                                        Married
+                                    </Radio>
+                                    <Radio value="Unmarried" color="secondary" isSquared>
+                                        Unmarried
+                                    </Radio>
+                                </Radio.Group>
+                            </div>
+                         
+
 
 
 
                             <br />
+                            <div className="w-full flex-center">
                             <button
-                                className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75"
+                                className="w-[200px] flex-center text-black bg-[#ffff01] py-2 rounded-full text-xl  transition-transform active:scale-95 mb-3 hover:opacity-75"
                                 onClick={bookingHandler}
                             >
-                                Confirm Appointment!
+                                Submit
                             </button>
+                            </div>
 
 
                         </form>
 
                     </div>
+                    </div>
+                    <div className="w-[40px]"></div>
 
 
                     {/* Calender */}
-                    <div class=" about-section-col flex-end">
+                    <div class="flex-center">
                         <div className="calenderContainer paddingsSmall">
                             <Calendar
                                 color='#3d91ff'

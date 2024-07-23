@@ -265,7 +265,7 @@ const usePage = ({ params }) => {
               <p className="mr-2 text-sm text-justify ">
               {todo.englishSymptoms.map((item2,index2) => (
 
-<span className='flex-start gap-[5px]'>
+<span key={index2} className='flex-start gap-[5px]'>
 
               <img className={"makeImageCircular"} src={todo._imageUrls[index2 + 1]} onClick={()=> setImgPrefIndex(index2 + 1)} height="30" width="30" />
               {todo.englishSymptoms[index2] }
@@ -310,7 +310,7 @@ const usePage = ({ params }) => {
               <p className="mr-2 text-sm text-justify ">
               {todo.banglaSymptoms.map((item2,index2) => (
 
-<span className='flex-start gap-[5px]'>
+<span key={index2} className='flex-start gap-[5px]'>
 
 <img className={"makeImageCircular"} src={todo._imageUrls[index2 + 1]} onClick={()=> setImgPrefIndex(index2 + 1)} height="30" width="30" />
 {todo.banglaSymptoms[index2] }
@@ -356,7 +356,7 @@ const usePage = ({ params }) => {
               <p className="mr-2 text-sm text-justify ">
               {todo.hindiSymptoms.map((item2,index2) => (
 
-<span className='flex-start gap-[5px]'>
+<span key={index2} className='flex-start gap-[5px]'>
 
 <img className={"makeImageCircular"} src={todo._imageUrls[index2 + 1]} onClick={()=> setImgPrefIndex(index2 + 1)} height="30" width="30" />
 {todo.hindiSymptoms[index2] }

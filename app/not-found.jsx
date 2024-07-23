@@ -1,3 +1,4 @@
+import Navbar from '@components/Navbar';
 import Link from 'next/link';
 import React from 'react'
 import { FcSearch } from "react-icons/fc";
@@ -5,6 +6,7 @@ import { FcSearch } from "react-icons/fc";
 const NotFound = () => {
   return (
     <div className='text-black'>
+      <Navbar/>
           <br/>
        <br/>
         <FcSearch size={200} />
