@@ -63,6 +63,7 @@ const LoginForm = () => {
                 //   setDate(null);
                 //   setMaritalStatus(true);
 
+                
                   toast.success('Application Submitted Successfuly!', {
                     position: "top-right",
                     autoClose: 5000,
