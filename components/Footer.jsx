@@ -93,7 +93,7 @@ const Footer = () => {
 
             <div className=" innerWidth80 flex-center flex max-sm:hidden">
 
-                <div className=' paddings c-wrapperFooter flex-between justify-content w-full' >
+                <div className=' paddings flex-between justify-content w-full' >
                     {/* For Showing Logo and SMall Details */}
                     {/* <div className="innerwidth paddingsLeft" >
 
@@ -137,7 +137,7 @@ const Footer = () => {
                             </b> </Text>
 
                         <Link href='' className='   flex-start  text-sm'> Contact Us! </Link>
-                        <Link href='' className='   flex-start  text-sm'> Privacy Policy </Link>
+                        <Link href='/privacy_policy' className='   flex-start  text-sm'> Privacy Policy </Link>
                         <Link href='' className='   flex-start  text-sm'> Our Service </Link>
                         <Link href='' className='   flex-start  text-sm'> FAQ </Link>
                         <br />
@@ -146,12 +146,10 @@ const Footer = () => {
                     {/* For Terms and Polices */}
                     <div className="innerwidth paddingsLeft">
                         <Text className="text-black font-inter">
-                            <b>
-                                Terms & Policies
-                            </b>
-
+                         <b> Terms & Policies </b>
                         </Text>
-                        <Link href='' className='   flex-start  text-sm'> Privacy Policy </Link>
+                        
+                        <Link to="/privacy_policy" href='/privacy_policy' className='   flex-start  text-sm'> Privacy Policy </Link>
                         <Link href='' className='   flex-start  text-sm'> Our Service </Link>
                         <Link href='' className='   flex-start  text-sm'> FAQ </Link>
                         <br />
@@ -187,7 +185,7 @@ const Footer = () => {
                     </Text>
 
                     <Link href='' className='   flex-start  text-sm'> Contact Us! </Link>
-                    <Link href='' className='   flex-start  text-sm'> Privacy Policy </Link>
+                    <Link href='privacy_policy' className='   flex-start  text-sm'> Privacy Policy </Link>
                     <Link href='' className='   flex-start  text-sm'> Our Service </Link>
                     <Link href='' className='   flex-start  text-sm'> FAQ </Link>
                     <br />
@@ -201,7 +199,7 @@ const Footer = () => {
 
 
                     </Text>
-                    <Link href='' className='   flex-start  text-sm'> Privacy Policy </Link>
+                    <Link href='privacy_policy' className='   flex-start  text-sm'> Privacy Policy </Link>
                     <Link href='' className='   flex-start  text-sm'> Our Service </Link>
                     <Link href='' className='   flex-start  text-sm'> FAQ </Link>
                     <br />
@@ -238,7 +236,7 @@ const Footer = () => {
                 <section className='  gap-5 flex-end mb-7 pt-3 '>
 
                     <h1 className="text-black text-sm font-inter ">
-                        Copyright © 2023. All Rights Reserved. German Homoeo Lab ( Haldia )
+                        Copyright © 2026. All Rights Reserved. German Homoeo Lab ( Haldia )
                     </h1>
 
                 </section>
