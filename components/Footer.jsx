@@ -94,50 +94,21 @@ const Footer = () => {
             <div className=" innerWidth80 flex-center flex max-sm:hidden">
 
                 <div className=' paddings flex-between justify-content w-full' >
-                    {/* For Showing Logo and SMall Details */}
-                    {/* <div className="innerwidth paddingsLeft" >
-
-                        <Link href='/' className='flex gap-2 flex-center'>
-                            <Image
-                                src='/logo.png'
-                                alt='logo'
-                                width={180}
-                                height={180}
-                                className='object-contain'
-                            />
-                        </Link>
-
-                        <span className='  innerwidth flexCenter orangeText text-medum'>   German Homoeo Lab (Haldia)</span>
-                        <span className='  innerwidth flexCenter orangeText text-sm'>    Monday - Saturday: 9 AM to 6 PM</span>
-                        <br />
-                        <div className='black_btn'>
-                            Email: homoeolabgerman@gmail.com
-                        </div>
-                    </div> */}
-
-                    {/* Address */}
-                    {/* <div className="innerwidth paddingsLeft">
-
-
-                        <span className='  innerwidth flex-start orangeText text-sm'> F-11, Durgachak (Near HP GAS )</span>
-                        <span className='  innerwidth flex-start orangeText text-sm'>  Haldia, West Bengal 721602 </span>
-                        <br />
-                        <div className='black_btn'>
-                            Email: homoeolabgerman@gmail.com
-                        </div>
-                    </div> */}
-
-
+             
 
                     {/* For Importent links */}
                     <div className="innerwidth paddingsLeft">
                         <Text className="text-black font-inter">
                             <b>
                                 Quick Links
-                            </b> </Text>
+                            </b> 
+                            </Text>
+                            <div>
+                                
+                            </div>
 
                         <Link href='' className='   flex-start  text-sm'> Contact Us! </Link>
-                        <Link href='/privacy_policy' className='   flex-start  text-sm'> Privacy Policy </Link>
+                        <Link href='/privacy_policy' className=' flex-start  text-sm'> Privacy Policy </Link>
                         <Link href='' className='   flex-start  text-sm'> Our Service </Link>
                         <Link href='' className='   flex-start  text-sm'> FAQ </Link>
                         <br />
